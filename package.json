@@ -1,0 +1,11 @@
+{
+  "name": "smash-culture-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for Smash Culture Pickleball Club",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test",
+    "dev": "npx netlify-cli dev"
+  }
+}
