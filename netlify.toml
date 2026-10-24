@@ -1,29 +1,33 @@
+
 # Netlify settings for Smash Culture Pickleball Club.
+
 [build]
-  publish = "public"                       # the website files
-  command = "node tools/set-site-url.js"   # fills in the site address for share previews
+  publish = "public"
 
 [build.environment]
   NODE_VERSION = "20"
 
 [functions]
-  directory = "netlify/functions"          # registration + contact email functions
+  directory = "netlify/functions"
   node_bundler = "esbuild"
 
-# Friendly URLs: /register works as well as /register.html
+# Friendly URLs
 [[redirects]]
   from = "/register"
   to = "/register.html"
   status = 200
+
 [[redirects]]
   from = "/about"
   to = "/about.html"
   status = 200
+
 [[redirects]]
   from = "/contact"
   to = "/contact.html"
   status = 200
 
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -33,6 +37,7 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'"
 
+# Cache assets
 [[headers]]
   for = "/assets/*"
   [headers.values]
